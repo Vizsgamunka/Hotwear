@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -27,6 +29,10 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        User::create(['vezeteknev'=>'Polgár', 'keresztnev'=>'Attila','email'=>'polgar.attila@gmail.com', 'jelszo'=> Hash::make('Aa123456@'), 'telefonszam'=> 06701234567, 'varos'=>'Pécel', 'cim'=>'Petőfi Sándor utca 13', 'hirlevel'=>false, 'jogosultsag'=>2]);
+
+        User::create(['vezeteknev'=>'Somoskői', 'keresztnev'=>'Gábor','email'=>'smskgbr@gmail.com', 'jelszo'=> Hash::make('Aa123456@'), 'telefonszam'=> 06701234561, 'varos'=>'Budapest', 'cim'=>'Kolompér utca 13', 'hirlevel'=>true, 'jogosultsag'=>1]);
     }
 
     /**
