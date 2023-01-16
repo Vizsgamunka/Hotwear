@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/api/felhasznalok', [UserController::class, 'index']);
+Route::get('/api/felhasznalo_keres/{id}', [UserController::class, 'show']);
+Route::delete('/api/felhasznalo_torol/{id}', [UserController::class, 'destroy']);
