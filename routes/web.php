@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriaController;
 use App\Http\Controllers\TervezoController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
@@ -26,3 +27,6 @@ Route::delete('/api/felhasznalo_torol/{id}', [UserController::class, 'destroy'])
 Route::get('/api/tervezok', [TervezoController::class, 'index']);
 Route::get('/api/tervezo_keres/{id}', [TervezoController::class, 'show']);
 Route::get('/api/tervezo_torol/{id}', [TervezoController::class, 'destroy']);
+Route::get('/api/kategoriak', [KategoriaController::class, 'index']);
+Route::get('/api/kategoria_keres/{id}', [KategoriaController::class, 'show']);
+Route::get('/api/kategoria_torol/{id}', [KategoriaController::class, 'destroy']);
