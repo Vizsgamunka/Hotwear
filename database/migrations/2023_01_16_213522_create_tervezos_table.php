@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Tervezo;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +19,9 @@ return new class extends Migration
             $table->string('nev', 40);
             $table->timestamps();
         });
+
+        Tervezo::create(['nev'=>'Calvin Klein']);
+
     }
 
     /**
