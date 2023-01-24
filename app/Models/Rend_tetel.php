@@ -10,6 +10,7 @@ class Rend_tetel extends Model
     use HasFactory;
     protected $fillable = [
         'rendeles',
-        'termek'
+        'termek',
+        'rend_menny'
     ];
 }

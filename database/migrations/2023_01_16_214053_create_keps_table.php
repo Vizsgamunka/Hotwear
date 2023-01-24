@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('keps', function (Blueprint $table) {
             $table->id('kep_id');
-            $table->string('nev');
+            $table->string('eleresi_ut');
             $table->foreignId('modell')->references('modell_id')->on('modells');
             $table->timestamps();
         });

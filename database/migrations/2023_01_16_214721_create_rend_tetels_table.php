@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('rend_tetels', function (Blueprint $table) {
             $table->foreignId('rendeles')->references('rendeles_id')->on('rendeles');
             $table->foreignId('termek')->references('termek_id')->on('termeks');
+            $table->integer('rend_menny');
             $table->timestamps();
         });
     }

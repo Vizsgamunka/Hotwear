@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('rendeles', function (Blueprint $table) {
             $table->id('rendeles_id');
+            $table->date('kelt');
             $table->foreignId('megrendelo')->references('f_azon')->on('users');
             $table->char('statusz', 3);
             $table->timestamps();

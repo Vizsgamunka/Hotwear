@@ -10,7 +10,7 @@ class Kep extends Model
     use HasFactory;
     protected $primaryKey = 'kep_id';
     protected $fillable = [
-        'nev',
+        'eleresi_ut',
         'modell'
     ];
 }

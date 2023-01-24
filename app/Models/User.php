@@ -19,8 +19,7 @@ class User extends Authenticatable
      */
     protected $primaryKey = 'f_azon';
     protected $fillable = [
-        'vezeteknev',
-        'keresztnev',
+        'nev',
         'email',
         'jelszo',
         'telefonszam',

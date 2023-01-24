@@ -10,6 +10,7 @@ class Rendeles extends Model
     use HasFactory;
     protected $primaryKey = 'rendeles_id';
     protected $fillable = [
+        'kelt',
         'megrendelo',
         'statusz'
     ];
