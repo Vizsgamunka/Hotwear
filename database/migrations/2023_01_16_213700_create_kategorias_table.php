@@ -20,10 +20,16 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Kategoria::create(['nev'=>'Nadrág']);
-        Kategoria::create(['nev'=>'Póló']);
-        Kategoria::create(['nev'=>'Sapka']);
-        Kategoria::create(['nev'=>'Zokni']);
+        Kategoria::create(['nev' => 'Nadrág']);
+        Kategoria::create(['nev' => 'Póló']);
+        Kategoria::create(['nev' => 'Sapka']);
+        Kategoria::create(['nev' => 'Zokni']);
+        Kategoria::create(['nev' => 'Ing']);
+        Kategoria::create(['nev' => 'Blúz']);
+        Kategoria::create(['nev' => 'Kabát']);
+        Kategoria::create(['nev' => 'Cipő']);
+        Kategoria::create(['nev' => 'Rövid']);
+        Kategoria::create(['nev' => 'Kardigán']);
     }
 
     /**

@@ -20,8 +20,16 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Tervezo::create(['nev'=>'Calvin Klein']);
-
+        Tervezo::create(['nev' => 'Calvin Klein']);
+        Tervezo::create(['nev' => 'Gucci']);
+        Tervezo::create(['nev' => 'Armani']);
+        Tervezo::create(['nev' => 'Louis Vuitton']);
+        Tervezo::create(['nev' => 'Prada']);
+        Tervezo::create(['nev' => 'Versace']);
+        Tervezo::create(['nev' => 'Dolce & Gabbana']);
+        Tervezo::create(['nev' => 'Givenchy']);
+        Tervezo::create(['nev' => 'Fendi']);
+        Tervezo::create(['nev' => 'Valentino']);
     }
 
     /**
