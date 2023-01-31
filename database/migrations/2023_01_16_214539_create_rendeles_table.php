@@ -21,16 +21,16 @@ return new class extends Migration
             $table->char('statusz', 3);
             $table->timestamps();
         });
-        Rendeles::create(['kelt' => '2020-11-03', 'megrendelo' => '1', 'statusz' => 'FDA']);
+        /*Rendeles::create(['kelt' => '2020-11-03', 'megrendelo' => '1', 'statusz' => 'FDA']);
         Rendeles::create(['kelt' => '2020-11-04', 'megrendelo' => '2', 'statusz' => 'JVH']);
-        Rendeles::create(['kelt' => '2020-11-05', 'megrendelo' => '3', 'statusz' => 'KSZ']);
-        Rendeles::create(['kelt' => '2020-11-06', 'megrendelo' => '4', 'statusz' => 'FDA']);
+        Rendeles::create(['kelt' => '2020-11-05', 'megrendelo' => '3', 'statusz' => 'KSZ']);*/
+        /*Rendeles::create(['kelt' => '2020-11-06', 'megrendelo' => '4', 'statusz' => 'FDA']);
         Rendeles::create(['kelt' => '2020-11-07', 'megrendelo' => '5', 'statusz' => 'JVH']);
         Rendeles::create(['kelt' => '2020-11-08', 'megrendelo' => '6', 'statusz' => 'KSZ']);
         Rendeles::create(['kelt' => '2020-11-09', 'megrendelo' => '7', 'statusz' => 'FDA']);
         Rendeles::create(['kelt' => '2020-11-10', 'megrendelo' => '8', 'statusz' => 'JVH']);
         Rendeles::create(['kelt' => '2020-11-11', 'megrendelo' => '9', 'statusz' => 'KSZ']);
-        Rendeles::create(['kelt' => '2020-11-12', 'megrendelo' => '10', 'statusz' => 'FDA']);
+        Rendeles::create(['kelt' => '2020-11-12', 'megrendelo' => '10', 'statusz' => 'FDA']);*/
     }
 
     /**

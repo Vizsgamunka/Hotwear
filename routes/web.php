@@ -18,7 +18,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/welcome');
+});
+Route::get('/tervezo', function () {
+    return view('pages/tervezo');
+});
+Route::get('/ruha', function () {
+    return view('pages/ruha');
+});
+Route::get('/rendeles', function () {
+    return view('pages/rendeles');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
 Route::get('/api/felhasznalok', [UserController::class, 'index']);
