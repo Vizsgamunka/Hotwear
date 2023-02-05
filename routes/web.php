@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KategoriaController;
 use App\Http\Controllers\TervezoController;
+use App\Http\Controllers\TermekController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -45,3 +46,8 @@ Route::get('/api/tervezo_torol/{id}', [TervezoController::class, 'destroy']);
 Route::get('/api/kategoriak', [KategoriaController::class, 'index']);
 Route::get('/api/kategoria_keres/{id}', [KategoriaController::class, 'show']);
 Route::get('/api/kategoria_torol/{id}', [KategoriaController::class, 'destroy']);
+
+
+Route::get('/api/termekek', [TermekController::class, 'osszesTermek']);
+Route::get('/api/termek/{id}', [TermekController::class, 'termek']);
+Route::get('/api/termekhez_tartozo_nev/{termek_id}', [TermekController::class, 'termekhez_tartozo_modell']);

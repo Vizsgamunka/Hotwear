@@ -24,5 +24,4 @@ class TervezoController extends Controller
     }
 
     
-    
 }

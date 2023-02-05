@@ -12,4 +12,9 @@ class Tervezo extends Model
     protected $fillable = [
         'nev'
     ];
+
+    public function tasktervezokRuhai()
+    {
+        return $this->hasMany(Tervezo::class, 'task_range_id', 'task_range_id');
+    }
 }
