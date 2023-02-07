@@ -26,11 +26,13 @@
                         {{ __('Rendelések') }}
                     </x-jet-nav-link>
                 </div>
+                @if(Auth::user()-> jogosultsag === 1 or Auth::user()-> jogosultsag === 2)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
                         {{ __('Felhasználók') }}
                     </x-jet-nav-link>
                 </div>
+                @endif
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
