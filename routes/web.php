@@ -90,7 +90,7 @@ Route::post('/api/rendeles_tarol', [RendelesController::class, 'store']);
 Route::put('/api/rendeles_frissit/{id}', [RendelesController::class, 'update']);
 Route::delete('/api/rendeles_torol/{id}', [RendelesController::class, 'destroy']);
 
-Route::get('/api/termekek', [TermekController::class, 'osszeTermek']);
+Route::get('/api/public_termekek', [TermekController::class, 'osszesTermek']);
 Route::get('/api/termekek', [TermekController::class, 'index']);
 Route::get('/api/termeks_keres/{id}', [TermekController::class, 'show']);
 Route::post('/api/termeks_tarol', [TermekController::class, 'store']);

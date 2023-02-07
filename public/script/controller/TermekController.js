@@ -5,7 +5,7 @@ class TermekController{
     constructor(){
         console.log("termek controller")
         const adatmodell = new AdatModell();
-        adatmodell.adatBe('/api/termekek', this.megjelenit);
+        adatmodell.adatBe('/api/public_termekek', this.megjelenit);
 
     }
     // amikor kiválasztom a sapka kategóriát, akkor kiváltódik ez az esemény

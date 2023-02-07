@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Termek;
 use App\Models\Modell;
 use Illuminate\Support\Facades\DB;
-
-
 use Illuminate\Http\Request;
 
 class TermekController extends Controller
