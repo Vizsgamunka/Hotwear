@@ -62,6 +62,16 @@ class TermekController extends Controller
         $termeks ->ar = $request->ar;
         $termeks ->save();
     }
+
+    public function adottTermekekNevSzerint($id)
+    {
+        $tervezo_termekei = DB::table('termeks as t')
+        ->select('m.kep', 'm.nev', 't.ar')
+        ->join('modells as m', 't.modell', '=', 'm.modell_id' )
+        ->where('m.nev', 'LIKE', '%'.$id.'%')
+        ->get();
+        return $tervezo_termekei;
+    }
 }
 
 
