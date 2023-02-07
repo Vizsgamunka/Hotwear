@@ -26,7 +26,20 @@ class TervezoController extends Controller
         Tervezo::find($id)->delete();
     }
 
-    public function adott_tervezohoz_tartozo_termekek($id)
+    public function store(Request $request)
+    {
+        $tervezos  = new Tervezo();
+        $tervezos ->nev = $request->nev;
+        $tervezos ->save();
+    }
+    public function update(Request $request, $id)
+    {
+        $tervezos = Tervezo::find($id);
+        $tervezos ->nev = $request->nev;
+        $tervezos ->save();
+    }
+
+    public function adottTervezohozTartozoTermekek($id)
     {
         $tervezo_termekei = DB::table('termeks as t')
         ->select('m.kep', 'm.nev', 't.ar')
@@ -36,4 +49,5 @@ class TervezoController extends Controller
         ->get();
         return $tervezo_termekei;
     }
+    
 }

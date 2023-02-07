@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class KategoriaController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $kategorias =  Kategoria::all();
         return $kategorias;
     }
@@ -26,7 +27,21 @@ class KategoriaController extends Controller
         Kategoria::find($id)->delete();
     }
 
-    public function adott_kategoriahoz_tartozo_termekek($id)
+    public function store(Request $request)
+    {
+        $kategorias  = new Kategoria();
+        $kategorias ->nev = $request->nev;
+        $kategorias ->save();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $kategorias = Kategoria::find($id);
+        $kategorias ->nev = $request->nev;
+        $kategorias ->save();
+    }
+
+    public function adottKategoriahozTartozoTermekek($id)
     {
         $kategoria_termekei = DB::table('termeks as t')
         ->select('m.kep', 'm.nev', 't.ar')
@@ -36,8 +51,5 @@ class KategoriaController extends Controller
         ->get();
         return $kategoria_termekei;
     }
-
-
-
-
+    
 }
