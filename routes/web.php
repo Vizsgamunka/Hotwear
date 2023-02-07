@@ -10,6 +10,7 @@ use App\Http\Controllers\TermekController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +52,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         return view('profile/show');
     })->name('profile_show');
 });
+Route::middleware(['admin',config('jetstream.auth_session'),'verified'])->group(function () {
+    
+});
+
+Route::get('/api/felhasznalok', [UserController::class, 'index']);
 
 Route::get('/api/kategoriak', [KategoriaController::class, 'index']);
 Route::get('/api/kategoria_keres/{id}', [KategoriaController::class, 'show']);
@@ -103,7 +109,7 @@ Route::put('/api/tervezo_frissit/{id}', [TervezoController::class, 'update']);
 Route::delete('/api/tervezo_torol/{id}', [TervezoController::class, 'destroy']);
 Route::get('/api/tervezohoz_tartozo_termekek/{id}', [TervezoController::class, 'adottTervezohozTartozoTermekek']);
 
-Route::get('/api/felhasznalok', [UserController::class, 'index']);
+
 Route::get('/api/felhasznalo_keres/{id}', [UserController::class, 'show']);
 Route::post('/api/felhasznalo_tarol', [UserController::class, 'store']);
 Route::put('/api/felhasznalo_frissit/{id}', [UserController::class, 'update']);
