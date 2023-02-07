@@ -23,5 +23,17 @@ class TervezoController extends Controller
         Tervezo::find($id)->delete();
     }
 
+    public function store(Request $request)
+    {
+        $tervezos  = new Tervezo();
+        $tervezos ->nev = $request->nev;
+        $tervezos ->save();
+    }
+    public function update(Request $request, $id)
+    {
+        $tervezos = Tervezo::find($id);
+        $tervezos ->nev = $request->nev;
+        $tervezos ->save();
+    }
     
 }

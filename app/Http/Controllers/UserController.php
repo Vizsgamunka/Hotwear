@@ -22,4 +22,38 @@ class UserController extends Controller
     {
         User::find($id)->delete();
     }
+    /*public function store(Request $request) 
+    { 
+        $users = new User(); 
+        $users ->name = $request->name;
+        $users ->email = $request->email;
+        $users ->password = $request->password;
+        $users ->telefonszam = $request->telefonszam;
+        $users ->varos = $request->varos;
+        $users ->cim = $request->cim;
+        $users ->hirlevel = $request->hirlevel;
+        $users ->jogosultsag = $request->jogosultsag;
+        $users ->email_verified_at = $request->email_verified_at;
+        $users ->current_team_id = $request->current_team_id;
+        $users ->profile_photo_path = $request->profile_photo_path;
+        $users->save(); 
+    } 
+
+    public function update(Request $request, $id)
+    {
+        $users = User::find($id);
+        $users ->name = $request->name;
+        $users ->email = $request->email;
+        $users ->password = $request->password;
+        $users ->telefonszam = $request->telefonszam;
+        $users ->varos = $request->varos;
+        $users ->cim = $request->cim;
+        $users ->hirlevel = $request->hirlevel;
+        $users ->jogosultsag = $request->jogosultsag;
+        $users ->email_verified_at = $request->email_verified_at;
+        $users ->current_team_id = $request->current_team_id;
+        $users ->profile_photo_path = $request->profile_photo_path;
+        $users ->save();
+    }
+    */
 }

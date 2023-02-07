@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class KategoriaController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $kategorias =  Kategoria::all();
         return $kategorias;
     }
@@ -22,4 +23,17 @@ class KategoriaController extends Controller
     {
         Kategoria::find($id)->delete();
     }
+    public function store(Request $request)
+    {
+        $kategorias  = new Kategoria();
+        $kategorias ->nev = $request->nev;
+        $kategorias ->save();
+    }
+    public function update(Request $request, $id)
+    {
+        $kategorias = Kategoria::find($id);
+        $kategorias ->nev = $request->nev;
+        $kategorias ->save();
+    }
+    
 }
