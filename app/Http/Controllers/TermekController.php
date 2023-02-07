@@ -33,6 +33,7 @@ class TermekController extends Controller
     public function destroy($id){
         Termek::find($id)->delete();
     }
+    
     public function store(Request $request){
         $termeks  = new Termek();
         $termeks ->modell = $request->modell;
@@ -73,5 +74,14 @@ class TermekController extends Controller
         ->where('t.meret', 'LIKE', $id)
         ->get();
         return $termek_meret_szerint;
+    }
+
+    public function egyezoTermekekSzama($meret, $termekNev){
+        $egyezoTermekekSzama = DB::table('termeks as t')
+        ->join('modells as m', 't.modell', '=', 'm.modell_id' )
+        ->where('t.meret', $meret)
+        ->where('m.nev', $termekNev)
+        ->count();
+        return $egyezoTermekekSzama;
     }
 }
