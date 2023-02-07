@@ -51,20 +51,29 @@ class TermekController extends Controller
     }
 
     public function adottTermekekNevSzerint($id){
-        $tervezo_termekei = DB::table('termeks as t')
+        $termek_nev_szerint = DB::table('termeks as t')
         ->select('m.kep', 'm.nev', 't.ar')
         ->join('modells as m', 't.modell', '=', 'm.modell_id' )
         ->where('m.nev', 'LIKE', '%'.$id.'%')
         ->get();
-        return $tervezo_termekei;
+        return $termek_nev_szerint;
     }
 
     public function adottTermekekArSkalaSzerint($minAr, $maxAr){
-        $tervezo_termekei = DB::table('termeks as t')
+        $termek_ar_szerint = DB::table('termeks as t')
         ->select('m.kep', 'm.nev', 't.ar')
         ->join('modells as m', 't.modell', '=', 'm.modell_id' )
         ->whereBetween('t.ar', [$minAr, $maxAr])
         ->get();
-        return $tervezo_termekei;
+        return $termek_ar_szerint;
+    }
+
+    public function adottTermekekMeretSzerint($id){
+        $termek_meret_szerint = DB::table('termeks as t')
+        ->select('m.kep', 'm.nev', 't.ar')
+        ->join('modells as m', 't.modell', '=', 'm.modell_id' )
+        ->where('t.meret', 'LIKE', $id)
+        ->get();
+        return $termek_meret_szerint;
     }
 }

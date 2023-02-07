@@ -98,6 +98,7 @@ Route::put('/api/termeks_frissit/{id}', [TermekController::class, 'update']);
 Route::delete('/api/termeks_torol/{id}', [TermekController::class, 'destroy']);
 Route::get('/api/termek_keres_nev_alapjan/{id}', [TermekController::class, 'adottTermekekNevSzerint']);
 Route::get('/api/termek_keres_ar_skala_alapjan/{minAr}/{maxAr}', [TermekController::class, 'adottTermekekArSkalaSzerint']);
+Route::get('/api/termek_keres_meret_alapjan/{id}', [TermekController::class, 'adottTermekekMeretSzerint']);
 
 
 Route::get('/api/tervezok', [TervezoController::class, 'index']);
