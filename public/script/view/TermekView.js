@@ -4,9 +4,12 @@ class TermekView{
         this.#elem = elem;
         szuloElem.append(`
             <div class="termek_div">
-                <h3>${elem.modell}</h3>
-                <h3>${elem.meret}</h3>
-                <h3>${elem.ar}</h3>
+                <h3>${elem.kep}</h3>
+                <h3>${elem.nev}</h3>
+                <div>
+                    <spam>${elem.ar}</spam>
+                    <button>Kosár</button>
+                </div>
             </div>
         `);
     }

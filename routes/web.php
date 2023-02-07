@@ -6,7 +6,6 @@ use App\Http\Controllers\ModellController;
 use App\Http\Controllers\Rend_tetelController;
 use App\Http\Controllers\RendelesController;
 use App\Http\Controllers\TervezoController;
-use App\Http\Controllers\TermekController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,9 +53,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 Route::get('/api/kategoriak', [KategoriaController::class, 'index']);
 Route::get('/api/kategoria_keres/{id}', [KategoriaController::class, 'show']);
+Route::get('/api/kategoria_torol/{id}', [KategoriaController::class, 'destroy']);
 Route::post('/api/kategoria_tarol', [KategoriaController::class, 'store']);
 Route::put('/api/kategoria_frissit/{id}', [KategoriaController::class, 'update']);
-Route::delete('/api/kategoria_torol/{id}', [KategoriaController::class, 'destroy']);
+Route::get('/api/kategoriahoz_tartozo_termekek/{id}', [KategoriaController::class, 'adottKategoriahozTartozoTermekek']);
 
 Route::get('/api/termekek', [TermekController::class, 'index']);
 Route::get('/api/termeks_keres/{id}', [TermekController::class, 'show']);
@@ -89,11 +89,22 @@ Route::post('/api/rendeles_tarol', [RendelesController::class, 'store']);
 Route::put('/api/rendeles_frissit/{id}', [RendelesController::class, 'update']);
 Route::delete('/api/rendeles_torol/{id}', [RendelesController::class, 'destroy']);
 
+Route::get('/api/termekek', [TermekController::class, 'osszeTermek']);
+Route::get('/api/termekek', [TermekController::class, 'index']);
+Route::get('/api/termeks_keres/{id}', [TermekController::class, 'show']);
+Route::post('/api/termeks_tarol', [TermekController::class, 'store']);
+Route::put('/api/termeks_frissit/{id}', [TermekController::class, 'update']);
+Route::delete('/api/termeks_torol/{id}', [TermekController::class, 'destroy']);
+Route::get('/api/termek_keres_nev_alapjan/{id}', [TermekController::class, 'adottTermekekNevSzerint']);
+//Route::get('/api/termek_keres_nev_alapjan/', [TermekController::class, 'adottTermekekNevSzerint']);
+
+
 Route::get('/api/tervezok', [TervezoController::class, 'index']);
 Route::get('/api/tervezo_keres/{id}', [TervezoController::class, 'show']);
 Route::post('/api/tervezo_tarol', [TervezoController::class, 'store']);
 Route::put('/api/tervezo_frissit/{id}', [TervezoController::class, 'update']);
 Route::delete('/api/tervezo_torol/{id}', [TervezoController::class, 'destroy']);
+Route::get('/api/tervezohoz_tartozo_termekek/{id}', [TervezoController::class, 'adottTervezohozTartozoTermekek']);
 
 Route::get('/api/felhasznalok', [UserController::class, 'index']);
 Route::get('/api/felhasznalo_keres/{id}', [UserController::class, 'show']);
@@ -113,3 +124,4 @@ Route::get('/api/kategoriak', [KategoriaController::class, 'index']);
 Route::get('/api/kategoria_keres/{id}', [KategoriaController::class, 'show']);
 Route::delete('/api/kategoria_torol/{id}', [KategoriaController::class, 'destroy']);
 */
+
