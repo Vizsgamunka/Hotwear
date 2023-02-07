@@ -22,6 +22,9 @@ return new class extends Migration
             $table->timestamps();
         });
         Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
+        Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
+        Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
+        Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
         Termek::create(['modell' => '2', 'meret' => 's', 'ar' => 23000]);
         Termek::create(['modell' => '1', 'meret' => 's', 'ar' => 12000]);
         Termek::create(['modell' => '2', 'meret' => 'm', 'ar' => 25000]);

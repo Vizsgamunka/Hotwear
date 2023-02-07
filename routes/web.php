@@ -65,12 +65,6 @@ Route::post('/api/kategoria_tarol', [KategoriaController::class, 'store']);
 Route::put('/api/kategoria_frissit/{id}', [KategoriaController::class, 'update']);
 Route::get('/api/kategoriahoz_tartozo_termekek/{id}', [KategoriaController::class, 'adottKategoriahozTartozoTermekek']);
 
-Route::get('/api/termekek', [TermekController::class, 'index']);
-Route::get('/api/termeks_keres/{id}', [TermekController::class, 'show']);
-Route::post('/api/termeks_tarol', [TermekController::class, 'store']);
-Route::put('/api/termeks_frissit/{id}', [TermekController::class, 'update']);
-Route::delete('/api/termeks_torol/{id}', [TermekController::class, 'destroy']);
-Route::get('/api/termekhez_tartozo_nev/{termek_id}', [TermekController::class, 'termekhez_tartozo_modell']);
 
 Route::get('/api/kepek', [KepController::class, 'index']);
 Route::get('/api/kep_keres/{id}', [KepController::class, 'show']);
@@ -105,6 +99,7 @@ Route::delete('/api/termeks_torol/{id}', [TermekController::class, 'destroy']);
 Route::get('/api/termek_keres_nev_alapjan/{id}', [TermekController::class, 'adottTermekekNevSzerint']);
 Route::get('/api/termek_keres_ar_skala_alapjan/{minAr}/{maxAr}', [TermekController::class, 'adottTermekekArSkalaSzerint']);
 Route::get('/api/termek_keres_meret_alapjan/{id}', [TermekController::class, 'adottTermekekMeretSzerint']);
+Route::get('/api/keszlet_az_adott_termekbol/{meret}/{termekNev}', [TermekController::class, 'egyezoTermekekSzama']);
 
 
 Route::get('/api/tervezok', [TervezoController::class, 'index']);
