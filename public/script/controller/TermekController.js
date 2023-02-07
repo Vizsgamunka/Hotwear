@@ -8,6 +8,10 @@ class TermekController{
         adatmodell.adatBe('/api/termekek', this.megjelenit);
 
     }
+    // amikor kiválasztom a sapka kategóriát, akkor kiváltódik ez az esemény
+    //kategoriavalsztas(sapkaid) {
+    /*     adatmodell.adatBe('/api/kategoriahoz_tartozo_termekek/'+sapkaid, this.megjelenit);
+    } */
 
     megjelenit(tomb){
         console.log(tomb);
