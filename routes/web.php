@@ -6,6 +6,7 @@ use App\Http\Controllers\ModellController;
 use App\Http\Controllers\Rend_tetelController;
 use App\Http\Controllers\RendelesController;
 use App\Http\Controllers\TervezoController;
+use App\Http\Controllers\TermekController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -96,7 +97,7 @@ Route::post('/api/termeks_tarol', [TermekController::class, 'store']);
 Route::put('/api/termeks_frissit/{id}', [TermekController::class, 'update']);
 Route::delete('/api/termeks_torol/{id}', [TermekController::class, 'destroy']);
 Route::get('/api/termek_keres_nev_alapjan/{id}', [TermekController::class, 'adottTermekekNevSzerint']);
-//Route::get('/api/termek_keres_nev_alapjan/', [TermekController::class, 'adottTermekekNevSzerint']);
+Route::get('/api/termek_keres_ar_skala_alapjan/{minAr}/{maxAr}', [TermekController::class, 'adottTermekekArSkalaSzerint']);
 
 
 Route::get('/api/tervezok', [TervezoController::class, 'index']);

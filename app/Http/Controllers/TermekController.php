@@ -58,4 +58,13 @@ class TermekController extends Controller
         ->get();
         return $tervezo_termekei;
     }
+
+    public function adottTermekekArSkalaSzerint($minAr, $maxAr){
+        $tervezo_termekei = DB::table('termeks as t')
+        ->select('m.kep', 'm.nev', 't.ar')
+        ->join('modells as m', 't.modell', '=', 'm.modell_id' )
+        ->whereBetween('t.ar', [$minAr, $maxAr])
+        ->get();
+        return $tervezo_termekei;
+    }
 }

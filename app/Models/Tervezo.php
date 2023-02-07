@@ -10,11 +10,10 @@ class Tervezo extends Model
     use HasFactory;
     protected $primaryKey = 't_azon';
     protected $fillable = [
-        'nev'
+        'nev',
+        'kep',
+        'leiras'
     ];
 
-    public function tasktervezokRuhai()
-    {
-        return $this->hasMany(Tervezo::class, 'task_range_id', 'task_range_id');
-    }
+
 }

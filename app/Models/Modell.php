@@ -12,6 +12,7 @@ class Modell extends Model
     protected $fillable = [
         'nev',
         'tervezo',
+        'leiras',
         'kep',
         'szezon',
         'max_mennyiseg',
