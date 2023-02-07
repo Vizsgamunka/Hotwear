@@ -5,7 +5,6 @@ use App\Http\Controllers\KepController;
 use App\Http\Controllers\ModellController;
 use App\Http\Controllers\Rend_tetelController;
 use App\Http\Controllers\RendelesController;
-use App\Http\Controllers\TermekController;
 use App\Http\Controllers\TervezoController;
 use App\Http\Controllers\TermekController;
 use App\Http\Controllers\UserController;
@@ -39,19 +38,32 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/product', function () {
+        return view('product');
+    })->name('product');
+    Route::get('/order', function () {
+        return view('order');
+    })->name('order');
+    Route::get('/users', function () {
+        return view('users');
+    })->name('users');
+    Route::get('/profile_show', function () {
+        return view('profile/show');
+    })->name('profile_show');
 });
 
 Route::get('/api/kategoriak', [KategoriaController::class, 'index']);
 Route::get('/api/kategoria_keres/{id}', [KategoriaController::class, 'show']);
-Route::get('/api/kategoria_torol/{id}', [KategoriaController::class, 'destroy']);
-
-
-Route::get('/api/termekek', [TermekController::class, 'osszesTermek']);
-Route::get('/api/termek/{id}', [TermekController::class, 'termek']);
-Route::get('/api/termekhez_tartozo_nev/{termek_id}', [TermekController::class, 'termekhez_tartozo_modell']);
 Route::post('/api/kategoria_tarol', [KategoriaController::class, 'store']);
 Route::put('/api/kategoria_frissit/{id}', [KategoriaController::class, 'update']);
 Route::delete('/api/kategoria_torol/{id}', [KategoriaController::class, 'destroy']);
+
+Route::get('/api/termekek', [TermekController::class, 'index']);
+Route::get('/api/termeks_keres/{id}', [TermekController::class, 'show']);
+Route::post('/api/termeks_tarol', [TermekController::class, 'store']);
+Route::put('/api/termeks_frissit/{id}', [TermekController::class, 'update']);
+Route::delete('/api/termeks_torol/{id}', [TermekController::class, 'destroy']);
+Route::get('/api/termekhez_tartozo_nev/{termek_id}', [TermekController::class, 'termekhez_tartozo_modell']);
 
 Route::get('/api/kepek', [KepController::class, 'index']);
 Route::get('/api/kep_keres/{id}', [KepController::class, 'show']);
@@ -76,12 +88,6 @@ Route::get('/api/rendeles_keres/{id}', [RendelesController::class, 'show']);
 Route::post('/api/rendeles_tarol', [RendelesController::class, 'store']);
 Route::put('/api/rendeles_frissit/{id}', [RendelesController::class, 'update']);
 Route::delete('/api/rendeles_torol/{id}', [RendelesController::class, 'destroy']);
-
-Route::get('/api/termekek', [TermekController::class, 'index']);
-Route::get('/api/termeks_keres/{id}', [TermekController::class, 'show']);
-Route::post('/api/termeks_tarol', [TermekController::class, 'store']);
-Route::put('/api/termeks_frissit/{id}', [TermekController::class, 'update']);
-Route::delete('/api/termeks_torol/{id}', [TermekController::class, 'destroy']);
 
 Route::get('/api/tervezok', [TervezoController::class, 'index']);
 Route::get('/api/tervezo_keres/{id}', [TervezoController::class, 'show']);

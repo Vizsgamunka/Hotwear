@@ -28,11 +28,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        /*'telefonszam',
+        'telefonszam',
         'varos',
         'cim',
         'hirlevel',
-        'jogosultsag',*/
+        'jogosultsag'
     ];
 
     /**

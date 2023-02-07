@@ -38,7 +38,7 @@
                 <li>
                     @if (Route::has('login'))
                         @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Profil</a>
+                        <a href="{{ route('profile_show') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Profil</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Bejelentkezés</a>
                     @if (Route::has('register'))
