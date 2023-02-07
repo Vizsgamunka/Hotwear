@@ -8,11 +8,14 @@ class TermekView{
                 <h3>${elem.nev}</h3>
                 <div>
                     <spam>${elem.ar}</spam>
-                    <button>Kosár</button>
+                    <button id="kosarba">Kosár</button>
                 </div>
             </div>
         `);
+
     }
+
+
 }
 
 export default TermekView;
