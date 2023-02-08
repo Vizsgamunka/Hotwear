@@ -26,7 +26,7 @@ class TermekController{
     }
     megjelenitKategoria(tomb){
         console.log(tomb);
-        let szuloElem=$("#dropbtn");
+        let szuloElem=$("#termek_kategoriak");
         tomb.forEach(kategoria => {
             new KategoriaView(kategoria, szuloElem);
         });

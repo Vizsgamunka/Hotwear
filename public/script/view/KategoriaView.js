@@ -3,8 +3,8 @@ class KategoriaView{
     constructor(elem, szuloElem){
         this.#elem = elem;
         szuloElem.append(`
-        <div id="myDropdown" class="dropdown-content">
-        <button id="kategoriaValaszto${elem.kategoria_id}">${elem.nev}</button>
+        <div id="termek_kategoria">
+            <button id="kategoriaValaszto${elem.kategoria_id}">${elem.nev}</button>
         </div>
         `);
         this.kategoriaMegjelenit=$(`#kategoriaValaszto${elem.kategoria_id}`);

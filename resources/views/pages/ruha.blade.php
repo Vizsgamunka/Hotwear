@@ -1,14 +1,12 @@
 @include('includes.head')
-    <h2>Ruhák</h2>
-    <button id="katszur">Kategória Szűrő</button>
-    <article class="ruha_article">
+    <article>
+        <div class="ruha_article">
 
-        
+        </div>
     </article>
-    <aside>
-        <div class="dropdown">
-            <button id="dropbtn">Kategóriák</button>
-                
+    <aside class="ruha_aside">
+        <div id="termek_kategoriak">
+            <h2>Kategóriák</h2>       
         </div>
     </aside>
 @include('includes.foot')
