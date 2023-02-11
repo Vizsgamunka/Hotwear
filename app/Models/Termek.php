@@ -12,6 +12,12 @@ class Termek extends Model
     protected $fillable = [
         'modell',
         'meret',
-        'ar'
+        'ar',
+        'keszlet'
     ];
+
+    public function modellObj(){
+        return $this->belongsTo(Modell::class, 'modell', 'modell_id');
+    }
+
 }

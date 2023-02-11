@@ -15,5 +15,9 @@ class Tervezo extends Model
         'leiras'
     ];
 
+    public function tervezo(){
+        return $this->hasMany(Modell::class, 'tervezo', 't_azon');
+    } 
+
 
 }

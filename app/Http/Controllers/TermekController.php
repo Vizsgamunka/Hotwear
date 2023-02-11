@@ -14,7 +14,7 @@ class TermekController extends Controller
         return $termekek; */
 
         $termekek = DB::table('termeks as t')
-        ->select('m.kep', 'm.nev', 't.ar')
+        ->select('t.termek_id', 'm.kep', 'm.nev', 't.ar', 't.modell')
         ->join('modells as m', 't.modell', '=', 'm.modell_id' )
         ->get();
         return $termekek;
@@ -84,4 +84,15 @@ class TermekController extends Controller
         ->count();
         return $egyezoTermekekSzama;
     }
+
+    public function termekhezTartozoModell($id){
+        $termekModellId = Termek::find($id)
+        ->select('modell')
+        ->where('termek_id', '=', $id)
+        ->get();
+        return $termekModellId;
+    }
+
+    
+
 }

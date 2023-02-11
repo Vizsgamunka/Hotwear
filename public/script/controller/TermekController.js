@@ -1,37 +1,23 @@
 import AdatModell from "../model/TermekModel.js";
 import TermekView from "../view/TermekView.js";
-import KategoriaView from "../view/KategoriaView.js";
-
+import TermekekView from "../view/TermekekView.js";
 class TermekController{
     constructor(){
         console.log("termek controller")
         const adatmodell = new AdatModell();
-        adatmodell.adatBe('/api/public_termekek', this.megjelenitTermek);
-        adatmodell.adatBe('/api/kategoriak', this.megjelenitKategoria);
-        $(window).on('kategoriaValaszto', (event)=>{
+        $(window).on('modellMegjelenit', (event)=>{
             console.log("controllerben van");
-            this.kategoriaTermekek="/api/kategoriahoz_tartozo_termekek/"+event.detail
+            this.termekLeiras="/api/modell_keres/"+event.detail
             console.log("Controllerben megjelen", event.detail);
-            adatmodell.adatBe(this.kategoriaTermekek, this.megjelenitTermek);
+            adatmodell.adatBe(this.termekLeiras, this.megjelenitTermekInformacio);
          }) 
     }
-
-    megjelenitTermek(tomb){
-        console.log(tomb);
+    megjelenitTermekInformacio(termekInformacio){
         let szuloElem=$(".ruha_article");
         szuloElem.empty()
-        tomb.forEach(termek => {
-            new TermekView(termek, szuloElem);
-        });
+        new TermekView(termekInformacio, szuloElem);
     }
-    megjelenitKategoria(tomb){
-        console.log(tomb);
-        let szuloElem=$("#termek_kategoriak");
-        tomb.forEach(kategoria => {
-            new KategoriaView(kategoria, szuloElem);
-        });
-    }
-    
+
 }
 
 export default TermekController;

@@ -1,115 +1,121 @@
 @charset "utf-8";
 
 /*GRID*/
-main{
-    display:grid;
-    grid-gap:5px;
+main {
+    display: grid;
+    grid-gap: 5px;
     grid-template-areas:
         "h h h h"
         "n n n n"
         "as a a a"
-        "f f f f"
-    ;
+        "f f f f";
 
-    grid-template-columns: 10% 30% 30% 30% ;
+    grid-template-columns: 10% 30% 30% 30%;
 }
-header{
+header {
     grid-area: h;
 }
-nav{
+nav {
     grid-area: n;
 }
-article{
+article {
     grid-area: a;
 }
-aside{
+aside {
     grid-area: as;
 }
-footer{
+footer {
     grid-area: f;
 }
 /*GRID VÉGE*/
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-main, header, nav, article, footer{
-    border:1px solid black;
-}
-body{
-    margin:0;
-}
-main{
-    width:100%;
-    /*max-width:800px;*/
-    margin:auto;
-    padding:5px;
-}
-header{
-    text-align:center;
-}
-header h1{
-
-}
-nav{
-    
-}
-nav ul{
-    margin:auto;
-    display:flex;
-    justify-content:space-around;
-    position:sticky;
-    top:0;
-}
-nav ul li{
-    list-style-type:none;
-    float:left;
-}
-nav ul li a{
-    text-decoration:none;
-}
-article{
-    
-}
-footer{
-    text-align:center;
-}
-.tervezo_div{
-    border:1px solid black;
-    padding:5px;
-}
-.tervezo_article{
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
-    justify-content:center;
-}
-
-.ruha_article{
-    margin: auto;
-    max-width: 80%;
-    display:flex;
-    flex-direction:row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 5px 10px;
-    
-}
-
-.card{
+main,
+header,
+nav,
+article,
+footer {
     border: 1px solid black;
+}
+body {
+    margin: 0;
+}
+main {
+    width: 100%;
+    /*max-width:800px;*/
+    margin: auto;
+    padding: 5px;
+}
+header {
+    text-align: center;
+}
+img {
     height: 200px;
     width: 200px;
+}
+nav {
+}
+nav ul {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+nav ul li {
+    list-style-type: none;
+    float: left;
+}
+nav ul li a {
+    text-decoration: none;
+}
+article {
+    display: flex;
+    justify-content: center;
+}
+footer {
+    text-align: center;
+}
+.tervezo_div {
+    border: 1px solid black;
+    padding: 5px;
+}
+.tervezo_article {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ruha_article {
+    max-width: 970px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    
+}
+
+.card {
+    border: 1px solid black;
+    height: 310px;
+    width: 310px;
 }
 
 #termek_kategoria button {
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50; /* Green */
+    border: 2px solid #4caf50; /* Green */
 }
 
-#termek_kategoria{
-    display: flex;  
+#termek_kategoria {
+    display: flex;
     justify-content: center;
 }
+
+
+
+

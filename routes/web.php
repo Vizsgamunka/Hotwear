@@ -73,7 +73,7 @@ Route::put('/api/kep_frissit/{id}', [KepController::class, 'update']);
 Route::delete('/api/kep_torol/{id}', [KepController::class, 'destroy']);
 
 Route::get('/api/modellek', [ModellController::class, 'index']);
-Route::get('/api/modell_keres/{id}', [ModellController::class, 'show']);
+Route::get('/api/modell_keres/{modell}', [ModellController::class, 'show']);
 Route::post('/api/modell_tarol', [ModellController::class, 'store']);
 Route::put('/api/modell_frissit/{id}', [ModellController::class, 'update']);
 Route::delete('/api/modell_torol/{id}', [ModellController::class, 'destroy']);
@@ -100,7 +100,7 @@ Route::get('/api/termek_keres_nev_alapjan/{id}', [TermekController::class, 'adot
 Route::get('/api/termek_keres_ar_skala_alapjan/{minAr}/{maxAr}', [TermekController::class, 'adottTermekekArSkalaSzerint']);
 Route::get('/api/termek_keres_meret_alapjan/{id}', [TermekController::class, 'adottTermekekMeretSzerint']);
 Route::get('/api/keszlet_az_adott_termekbol/{meret}/{termekNev}', [TermekController::class, 'egyezoTermekekSzama']);
-
+Route::get('/api/termekhez_tartozo_modell/{id}', [TermekController::class, 'termekhezTartozoModell']);
 
 Route::get('/api/tervezok', [TervezoController::class, 'index']);
 Route::get('/api/tervezo_keres/{id}', [TervezoController::class, 'show']);

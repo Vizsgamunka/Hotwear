@@ -13,10 +13,14 @@ class ModellController extends Controller
         return $modell;
     }
 
-    public function show($id)
+    public function show(Modell $modell)
     {
-        $modell = Modell::find($id);
-        return $modell;
+        return $modell->load([
+            'tervezo',
+            'kategoria',
+            'termekek'
+        ]);
+
     }
 
     public function destroy($id)
@@ -45,4 +49,6 @@ class ModellController extends Controller
         $modell ->kategoria = $request->kategoria;
         $modell ->save();
     }
+
+    
 }

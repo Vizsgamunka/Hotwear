@@ -12,4 +12,8 @@ class Kategoria extends Model
     protected $fillable = [
         'nev'
     ];
+
+    public function modellObj(){
+        return $this->hasMany(Modell::class, 'kategoria', 'kategoria_id');
+    }
 }
