@@ -12,8 +12,6 @@ class Termek extends Model
     protected $fillable = [
         'modell',
         'meret',
-        'ar',
-        'keszlet'
     ];
 
     public function modellObj(){

@@ -1,4 +1,4 @@
-class TervezoView{
+class PublicTervezoView{
     #elem;
     constructor(elem, szuloElem){
         this.#elem = elem;
@@ -10,4 +10,4 @@ class TervezoView{
     }
 }
 
-export default TervezoView;
+export default PublicTervezoView;

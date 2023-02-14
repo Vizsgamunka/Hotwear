@@ -1,4 +1,4 @@
-class KategoriaView{
+class PublicKategoriaView{
     #elem;
     #active;
     constructor(elem, szuloElem){
@@ -9,13 +9,10 @@ class KategoriaView{
 
         this.kategoriaMegjelenit=$(`#kategoriaValaszto${elem.kategoria_id}`);
 
-        console.log(this.kategoriaMegjelenit);
         this.kategoriaMegjelenit.on("click", ()=> 
         {
-            console.log(this.kategoriaMegjelenit);
             szuloElem.children().removeClass('active');
             this.kategoriaMegjelenit.addClass('active');
-            console.log("módosít az");
 
             this.kattintasTrigger("kategoriaValaszto")
         });
@@ -26,11 +23,10 @@ class KategoriaView{
             
         kattintasTrigger(esemenyNeve)
         {
-            console.log("triggerben", esemenyNeve);
             const esemeny = new CustomEvent(esemenyNeve, {detail:this.#elem.kategoria_id});
             window.dispatchEvent(esemeny);
         }
 
 }
 
-export default KategoriaView;
+export default PublicKategoriaView;

@@ -48,7 +48,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         return view('dashboard');
     })->name('dashboard');
     Route::get('/rendelesek', function () {
-        return view('rendelesek');
+        return view('pages/rendelesek');
     })->name('rendelesek');
     Route::get('/users', function () {
         return view('users');

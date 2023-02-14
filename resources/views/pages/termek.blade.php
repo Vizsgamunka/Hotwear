@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <h5 class="text-center"><i id="ar"></i></h5>
+                            <h5 class="text-center">{{ $modell->ar }} Ft</h5>
                         </li>
                     </ul>
                     <div class="row">
@@ -27,11 +27,10 @@
                                 <label for="meretek">Méret</label>
                                 <select id='meretek' class="form-control"></select>
                             </div>
-
-                            <div class="col-3">
+<!--                             <div class="col-3">
                                 <label for="mennyiseg">Mennyiség</label>
                                 <input id="mennyiseg" type="number" class="form-control" step="1" min="1" value="1"></input>
-                            </div>
+                            </div> -->
                             <div class="col-4">
                                 <label for="gomb"> </label>
                                 <button type="button" id="gomb" class="btn btn-primary btn-sm">Kosárba</button>

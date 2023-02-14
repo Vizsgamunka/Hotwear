@@ -1,5 +1,5 @@
 import TervezoModel from "../model/TervezoModel.js";
-import TervezoView from "../view/TervezoView.js";
+import PublicTervezoView from "../view/PublicTervezoView.js";
 
 class TervezoController{
     constructor(){
@@ -10,7 +10,7 @@ class TervezoController{
     megjelenit(tomb){
         let szuloelem=$(".tervezo_article");
         tomb.forEach(tervezo => {
-            new TervezoView(tervezo, szuloelem);
+            new PublicTervezoView(tervezo, szuloelem);
         });
     }
 }

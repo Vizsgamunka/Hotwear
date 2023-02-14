@@ -1,4 +1,4 @@
-class TermekekView {
+class KosarView {
     #elem;
     constructor(elem, szuloElem) {
         this.#elem = elem;
@@ -9,7 +9,13 @@ class TermekekView {
                         <div class="card-img-overlay ps-0"> </div>
                             <div class="card-body ps-0 bg-200">
                                 <h5 class="fw-bold text-1000 text-truncate">${elem.nev}</h5>
-                            <div class="fw-bold"><span class="text-primary">${elem.minPrice} Ft-tól</span></div>
+                            </div>
+                            <div class="fw-bold">
+                                <span class="text-primary">${elem.termek.meret}</span>
+                            <div class="fw-bold">
+                                <span class="text-primary">${elem.termek.ar} Ft-tól</span>
+                                <button type="button" class="btn btn-primary btn-sm">Törlés</button>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -21,32 +27,17 @@ class TermekekView {
 
         this.modellMegjelenit = $(`#termekId${elem.modell_id}`);
 
-        console.log(this.modellMegjelenit);
         this.modellMegjelenit.on("click", () => {
-            console.log(this.modellMegjelenit);
-            console.log("módosít az");
-            console.log(elem);
             this.kattintasTrigger('modellMegjelenit')
         });
-
-        /* this.modellMegjelenit = $(`#termekId${elem.modell_id}`);
-
-        console.log(this.modellMegjelenit);
-        this.modellMegjelenit.on("click", () => {
-            console.log(this.modellMegjelenit);
-            console.log("módosít az");
-            console.log(elem);
-            this.kattintasTrigger('modellMegjelenit')
-        }); */
 
     }
 
     kattintasTrigger(esemenyneve) {
-        console.log("triggerben", esemenyneve);
         const esemeny = new CustomEvent(esemenyneve, {detail: elem.modell_id});
         window.dispatchEvent(esemeny);
     }
 
 }
 
-export default TermekekView;
+export default KosarView;

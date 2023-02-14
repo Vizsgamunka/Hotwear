@@ -1,4 +1,4 @@
-class TermekView {
+class PublicTermekView {
     #elem;
     constructor(elem, szuloElem) {
         this.#elem = elem;
@@ -73,4 +73,4 @@ class TermekView {
 
 }
 
-export default TermekView;
+export default PublicTermekView;

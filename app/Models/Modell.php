@@ -9,15 +9,14 @@ class Modell extends Model
 {
     use HasFactory;
     protected $primaryKey = 'modell_id';
-    protected $appends = ['minPrice'];
     protected $fillable = [
         'nev',
         'tervezo',
         'leiras',
         'kep',
         'szezon',
-        'max_mennyiseg',
-        'kategoria'
+        'kategoria',
+        'ar'
     ];
     public function termekek(){
         return $this->hasMany(Termek::class, 'modell', 'modell_id');
@@ -29,9 +28,4 @@ class Modell extends Model
         return $this->belongsTo(Kategoria::class, 'kategoria', 'kategoria_id');
     } 
 
-    public function getMinPriceAttribute(){
-        return $this->termekek->min(function($t){
-            return $t->ar;
-        });
-    }
 }

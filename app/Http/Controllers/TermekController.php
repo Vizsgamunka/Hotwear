@@ -10,14 +10,9 @@ use Illuminate\Http\Request;
 class TermekController extends Controller
 {
     public function osszesTermek(){
-       /*  $termekek =  Termek::all();
-        return $termekek; */
-
-        $termekek = DB::table('termeks as t')
-        ->select('t.termek_id', 'm.kep', 'm.nev', 't.ar', 't.modell')
-        ->join('modells as m', 't.modell', '=', 'm.modell_id' )
-        ->get();
+        $termekek =  Termek::all();
         return $termekek;
+
     }
 
     public function index(){
