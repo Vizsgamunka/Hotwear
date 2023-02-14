@@ -22,9 +22,6 @@ return new class extends Migration
             $table->integer('keszlet')->default(0);
             $table->timestamps();
         });
-        /* Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
-        Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
-        Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
         Termek::create(['modell' => '1', 'meret' => 'xs', 'ar' => 10000]);
         Termek::create(['modell' => '2', 'meret' => 's', 'ar' => 23000]);
         Termek::create(['modell' => '3', 'meret' => 's', 'ar' => 12000]);
@@ -34,7 +31,9 @@ return new class extends Migration
         Termek::create(['modell' => '7', 'meret' => 'xs', 'ar' => 15000]);
         Termek::create(['modell' => '8', 'meret' => 'm', 'ar' => 23000]);
         Termek::create(['modell' => '9', 'meret' => 'l', 'ar' => 24000]);
-        Termek::create(['modell' => '10', 'meret' => 'xll', 'ar' => 26000]); */
+        Termek::create(['modell' => '10', 'meret' => 'xxl', 'ar' => 26000]);
+        Termek::create(['modell' => '1', 'meret' => 'm', 'ar' => 12500]);
+        Termek::create(['modell' => '1', 'meret' => 'l', 'ar' => 15000]);
     }
 
     /**
