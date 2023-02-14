@@ -16,8 +16,8 @@ class ModellController extends Controller
     public function show(Modell $modell)
     {
         return $modell->load([
-            'tervezo',
-            'kategoria',
+            'tervezoObj',
+            'kategoriaObj',
             'termekek'
         ]);
 

@@ -41,6 +41,11 @@ class KategoriaController extends Controller
         $kategorias ->save();
     }
 
+
+    public function modellek(Kategoria $kategoria){
+        return $kategoria->modellek;
+    }
+
     public function adottKategoriahozTartozoTermekek($id)
     {
         $kategoria_termekei = DB::table('termeks as t')

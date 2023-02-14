@@ -13,7 +13,7 @@ class Kategoria extends Model
         'nev'
     ];
 
-    public function modellObj(){
+    public function modellek(){
         return $this->hasMany(Modell::class, 'kategoria', 'kategoria_id');
     }
 }

@@ -3,32 +3,47 @@ class TermekekView {
     constructor(elem, szuloElem) {
         this.#elem = elem;
         szuloElem.append(`
-        <div id="termekId${elem.termek_id}" class="card">
-            <img src="${elem.kep}" alt=" Avatar" style="width:100%">
-            <div class="container">
-                <h4><b>${elem.nev}</b></h4>
-                <div>
-                    <spam id="termekAr">${elem.ar}</spam>
-                    <button id="kosarba">Kosár</button>
-                </div>
+            <div class="col-lg-3 col-md-4">
+                <a href="/termekek/${elem.modell_id}">
+                    <div id='termekId${elem.modell_id}' class="card card-span h-100 text-white"><img class="img-fluid h-100" src="${elem.kep}" alt="..." />
+                        <div class="card-img-overlay ps-0"> </div>
+                            <div class="card-body ps-0 bg-200">
+                                <h5 class="fw-bold text-1000 text-truncate">${elem.nev}</h5>
+                            <div class="fw-bold"><span class="text-primary">${elem.minPrice} Ft-tól</span></div>
+                        </div>
+                    </div>
+                </a>
+                
             </div>
-        </div>
         `);
 
-        this.modellMegjelenit = $(`#termekId${elem.termek_id}`);
+        
+
+        this.modellMegjelenit = $(`#termekId${elem.modell_id}`);
 
         console.log(this.modellMegjelenit);
         this.modellMegjelenit.on("click", () => {
             console.log(this.modellMegjelenit);
             console.log("módosít az");
-
-            this.kattintasTrigger(elem.modell)
+            console.log(elem);
+            this.kattintasTrigger('modellMegjelenit')
         });
+
+        /* this.modellMegjelenit = $(`#termekId${elem.modell_id}`);
+
+        console.log(this.modellMegjelenit);
+        this.modellMegjelenit.on("click", () => {
+            console.log(this.modellMegjelenit);
+            console.log("módosít az");
+            console.log(elem);
+            this.kattintasTrigger('modellMegjelenit')
+        }); */
+
     }
 
-    kattintasTrigger(modell_id) {
-        console.log("triggerben", modell_id);
-        const esemeny = new CustomEvent('modellMegjelenit', { detail: modell_id});
+    kattintasTrigger(esemenyneve) {
+        console.log("triggerben", esemenyneve);
+        const esemeny = new CustomEvent(esemenyneve, {detail: elem.modell_id});
         window.dispatchEvent(esemeny);
     }
 
