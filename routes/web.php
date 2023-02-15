@@ -23,6 +23,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+$router->get('/termekek/{id:\d+}', function ($id) {
+    require_once "src/controller/TermekController.php";
+    $termekController = new TermekController();
+    $termekController->megjelenitTermek($id);
+});
+
+
 Route::get('/', function () {
     return view('pages/kezdolap');
 })->name('kezdolap');

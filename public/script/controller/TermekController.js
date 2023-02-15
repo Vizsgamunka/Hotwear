@@ -1,19 +1,25 @@
 import AdatModell from "../model/TermekModel.js";
 import PublicTermekView from "../view/PublicTermekView.js";
-import PublicTermekekView from "../view/PublicTermekekView.js";
+
 class TermekController {
     constructor() {
-        const modell_id=$('meta[name=modell]').attr('content');
         const adatmodell = new AdatModell();
-        this.termekLeiras = "/api/modell_keres/" + modell_id;
-        adatmodell.adatBe(this.termekLeiras, this.megjelenitTermekInformacio);
-    }
-    megjelenitTermekInformacio(termekInformacio) {
-        let szuloElem = $(".ruha_article");
-        szuloElem.empty()
-        new PublicTermekView(termekInformacio, szuloElem);
+        $(window).on('modellMegjelenit', (event)=>{
+            this.termekLeiras = "/api/modell_keres/"+event.detail;
+            adatmodell.adatBe(this.termekLeiras, this.megjelenitTermekInformacio);
+        });
     }
 
+    megjelenitTermek(id) {
+        const adatmodell = new AdatModell();
+        adatmodell.adatBe(`/api/modell_keres/${id}`, this.megjelenitTermekInformacio);
+    }
+
+    megjelenitTermekInformacio(tomb) {
+        let szuloElem = $(".termek_article");
+        szuloElem.empty();
+        new PublicTermekView(tomb, szuloElem);
+    }
 }
 
 export default TermekController;
