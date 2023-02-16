@@ -14,8 +14,7 @@ class PublicTermekekView {
                             </div>
                         </div>
                     </div>
-                </a>
-                
+                </a>          
             </div>
         `);
 
@@ -26,16 +25,6 @@ class PublicTermekekView {
         this.modellMegjelenit.on("click", () => {
             this.kattintasTrigger('modellMegjelenit')
         });
-
-        /* this.modellMegjelenit = $(`#termekId${elem.modell_id}`);
-
-        console.log(this.modellMegjelenit);
-        this.modellMegjelenit.on("click", () => {
-            console.log(this.modellMegjelenit);
-            console.log("módosít az");
-            console.log(elem);
-            this.kattintasTrigger('modellMegjelenit')
-        }); */
 
     }
 

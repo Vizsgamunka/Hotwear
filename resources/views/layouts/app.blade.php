@@ -53,7 +53,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item px-2"><a class="nav-link fw-medium active" aria-current="page" href="{{ route('kezdolap') }}">Kezdőlap</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('termekek') }}">Termékek</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('tervezo') }}">Tervezők</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('tervezok') }}">Tervezők</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('rolunk') }}">Rólunk</a></li>
             @auth
             <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('rendelesek') }}">Rendelések</a></li>

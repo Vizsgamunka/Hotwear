@@ -23,16 +23,16 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Tervezo::create(['nev' => 'Calvin Klein', 'kep' => 'src/base/1.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Gucci', 'kep' => 'src/base/2.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Armani', 'kep' => 'src/base/3.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Louis Vuitton', 'kep' => 'src/base/4.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Prada', 'kep' => 'src/base/4.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Versace', 'kep' => 'src/base/6.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Dolce & Gabbana', 'kep' => 'src/base/7.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Givenchy', 'kep' => 'src/base/8.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Fendi', 'kep' => 'src/base/8.png', 'leiras' => 'Lorem ipsum']);
-        Tervezo::create(['nev' => 'Valentino', 'kep' => 'src/base/10.png', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Calvin Klein', 'kep' => 'tervezoKepek/tervezoKep1.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Gucci', 'kep' => 'tervezoKepek/tervezoKep2.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Armani', 'kep' => 'tervezoKepek/tervezoKep3.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Louis Vuitton', 'kep' => 'tervezoKepek/tervezoKep4.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Prada', 'kep' => 'tervezoKepek/tervezoKep5.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Versace', 'kep' => 'tervezoKepek/tervezoKep6.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Dolce & Gabbana', 'kep' => 'tervezoKepek/tervezoKep7.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Givenchy', 'kep' => 'tervezoKepek/tervezoKep8.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Fendi', 'kep' => 'tervezoKepek/tervezoKep9.jpg', 'leiras' => 'Lorem ipsum']);
+        Tervezo::create(['nev' => 'Valentino', 'kep' => 'tervezoKepek/tervezoKep10.jpg', 'leiras' => 'Lorem ipsum']);
     }
 
     /**

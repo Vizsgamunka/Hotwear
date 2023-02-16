@@ -9,6 +9,7 @@ use App\Http\Controllers\TervezoController;
 use App\Http\Controllers\TermekController;
 use App\Http\Controllers\UserController;
 use App\Models\Modell;
+use App\Models\Tervezo;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,22 +27,33 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages/kezdolap');
 })->name('kezdolap');
+
 Route::get('/termekek', function () {
     return view('pages/termekek');
 })->name('termekek');
+
 Route::get('/termekek/{modell}', function (Modell $modell) {
     return view('pages/termek', ['modell' => $modell->load([
         'tervezoObj',
         'kategoriaObj'
     ])]);
 })->name('termek');
+
+
+Route::get('/tervezok/{modell}', function (Tervezo $tervezo) {
+    return view('pages/tervezo', ['modell' => $tervezo->load([
+        'tervezoObj',
+
+    ])]);
+})->name('tervezo');
+
 Route::get('/rolunk', function () {
     return view('pages/rolunk');
 })->name('rolunk');
 
-Route::get('/tervezo', function () {
-    return view('pages/tervezo');
-})->name('tervezo');
+Route::get('/tervezok', function () {
+    return view('pages/tervezok');
+})->name('tervezok');
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () {

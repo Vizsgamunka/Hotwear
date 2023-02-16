@@ -1,18 +1,18 @@
-import TervezoModel from "../model/TervezoModel.js";
+import AdatModell from "../model/TervezoModel.js";
 import PublicTervezoView from "../view/PublicTervezoView.js";
-
-class TervezoController{
-    constructor(){
-        const tervezomodel = new TervezoModel();
-        tervezomodel.adatBe('/api/tervezok', this.megjelenit);
+class TervezoController {
+    constructor() {
+        const t_azon=$('meta[name=t_azon]').attr('content');
+        const adatmodell = new AdatModell();
+        this.tervezoLeiras = "/api/tervezo_keres/" +t_azon;
+        adatmodell.adatBe(this.tervezoLeiras, this.megjelenitTervezoInformacio);
+    }
+    megjelenitTervezoInformacio(tervezoInformacio) {
+        let szuloElem = $(".ruha_article");
+        szuloElem.empty()
+        new PublicTervezoView(tervezoInformacio, szuloElem);
     }
 
-    megjelenit(tomb){
-        let szuloelem=$(".tervezo_article");
-        tomb.forEach(tervezo => {
-            new PublicTervezoView(tervezo, szuloelem);
-        });
-    }
 }
 
 export default TervezoController;

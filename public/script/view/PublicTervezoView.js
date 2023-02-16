@@ -1,13 +1,11 @@
-class PublicTervezoView{
+class PublicTermekView {
     #elem;
-    constructor(elem, szuloElem){
-        this.#elem = elem;
-        szuloElem.append(`
-            <div class="tervezo_div">
-                <h3>${elem.nev}</h3>
-            </div>
-        `);
+    constructor(elem, szuloElem) {
+
     }
+
+
+
 }
 
-export default PublicTervezoView;
+export default PublicTermekView;

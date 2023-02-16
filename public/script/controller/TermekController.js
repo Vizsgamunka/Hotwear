@@ -1,6 +1,6 @@
 import AdatModell from "../model/TermekModel.js";
 import PublicTermekView from "../view/PublicTermekView.js";
-import PublicTermekekView from "../view/PublicTermekekView.js";
+
 class TermekController {
     constructor() {
         const modell_id=$('meta[name=modell]').attr('content');

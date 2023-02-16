@@ -33,7 +33,7 @@
                             </div> -->
                             <div class="col-4">
                                 <label for="gomb"> </label>
-                                <button type="button" id="gomb" class="btn btn-primary btn-sm">Kosárba</button>
+                                <button id="gomb" class="btn btn-primary btn-sm">Kosárba</button>
                             </div>
                         </div>
                     </div>
