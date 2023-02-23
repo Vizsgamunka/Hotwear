@@ -23,15 +23,15 @@
                     </ul>
                     <div class="row">
                         <div class="row">
-                            <div class="col-5">
+                            <div class="col-lg-5 pr-0">
                                 <label for="meretek">Méret</label>
-                                <select id='meretek' class="form-control"></select>
+                                <select id='meretek' class="form-control p-1"></select>
                             </div>
-<!--                             <div class="col-3">
+                            <div class="col-lg-3 px-lg-0">
                                 <label for="mennyiseg">Mennyiség</label>
-                                <input id="mennyiseg" type="number" class="form-control" step="1" min="1" value="1"></input>
-                            </div> -->
-                            <div class="col-4">
+                                <input id="mennyiseg" type="number" class="form-control" step="1" min="1" value="1">
+                            </div>
+                            <div class="col-lg-4 pl-0">
                                 <label for="gomb"> </label>
                                 <button id="gomb" class="btn btn-primary btn-sm">Kosárba</button>
                             </div>
@@ -41,8 +41,8 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Szezon: {{ $modell->szezon }}</li>
                     <li class="list-group-item">Tervezte: {{ $modell->tervezoObj->nev }}</li>
-                    <li class="list-group-item">kategória: {{ $modell->kategoriaObj->nev }}</li>
-                    <li class="list-group-item">Maximális rendelhető: {{ $modell->max_mennyiseg }}</li>
+                    <li class="list-group-item">Kategória: {{ $modell->kategoriaObj->nev }}</li>
+                    <li class="list-group-item">Készlet: <span id="termek-keszlet"></span></li>
                 </ul>
             </div>
         </div>

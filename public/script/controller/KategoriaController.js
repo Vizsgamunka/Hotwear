@@ -8,7 +8,7 @@ class KategoriaController{
         const termekekController = new TermekekController();
         adatmodell.adatBe('/api/kategoriak', this.megjelenitKategoria);
         $(window).on('kategoriaValaszto', (event)=>{
-            this.kategoriaTermekek=`/api/kategoria/${event.detail}/modellek`
+            this.kategoriaTermekek=`/api/kategoria/${event.detail}/modellek`;
             adatmodell.adatBe(this.kategoriaTermekek, termekekController.megjelenitTermekek);
          }) 
     }

@@ -12,17 +12,17 @@
             <div class="card">
                 <img class="card-img-top" src="{{ url($tervezo->kep) }}" alt="{{ $tervezo->nev }}">
                 <div class="card-body">
-                    <h5 id="m-nev" class="card-title"></h5>
+                    <h5 id="m-nev" class="card-title">{{ $tervezo->nev }}</h5>
                     <p class="card-text">Rólam: {{ $tervezo->leiras }}</p>
                 </div>
-                <div class="card-body">
+                <!-- <div class="card-body">
                     <div class="row">
                         <div>
                             <label for="gomb"> </label>
                             <button id="gomb" class="btn btn-primary btn-sm">Termékek</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

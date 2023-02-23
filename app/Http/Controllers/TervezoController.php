@@ -15,10 +15,10 @@ class TervezoController extends Controller
         return $tervezok;
     }
 
-    public function show($id)
-    {
-        $tervezo = Tervezo::find($id);
-        return $tervezo;
+    public function show(Tervezo $tervezo) {
+        return view('pages/tervezo', ['tervezo' => $tervezo->load([
+            'tervezo',
+        ])]);
     }
 
     public function destroy($id)
@@ -49,5 +49,5 @@ class TervezoController extends Controller
         ->get();
         return $tervezo_termekei;
     }
-    
+
 }

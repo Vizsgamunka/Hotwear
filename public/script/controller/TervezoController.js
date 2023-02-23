@@ -2,7 +2,7 @@ import AdatModell from "../model/TervezoModel.js";
 import PublicTervezoView from "../view/PublicTervezoView.js";
 class TervezoController {
     constructor() {
-        const t_azon=$('meta[name=t_azon]').attr('content');
+        const tervezo=$('meta[name=tervezo]').attr('content');
         const adatmodell = new AdatModell();
         this.tervezoLeiras = "/api/tervezo_keres/" +t_azon;
         adatmodell.adatBe(this.tervezoLeiras, this.megjelenitTervezoInformacio);

@@ -46,7 +46,7 @@ class KategoriaController extends Controller
         return $kategoria->modellek;
     }
 
-    public function adottKategoriahozTartozoTermekek($id)
+    /* public function adottKategoriahozTartozoTermekek($id)
     {
         $kategoria_termekei = DB::table('termeks as t')
         ->select('m.kep', 'm.nev', 't.ar')
@@ -55,6 +55,6 @@ class KategoriaController extends Controller
         ->where('k.kategoria_id', '=', $id)
         ->get();
         return $kategoria_termekei;
-    }
+    } */
     
 }

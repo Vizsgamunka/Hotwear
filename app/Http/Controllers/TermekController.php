@@ -20,15 +20,17 @@ class TermekController extends Controller
         return $termeks;
     }
 
-    public function show($id){
-        $termeks = Termek::find($id);
-        return $termeks;
+    public function show(Modell $modell) {
+        return view('pages/termek', ['modell' => $modell->load([
+            'tervezoObj',
+            'kategoriaObj'
+        ])]);
     }
 
     public function destroy($id){
         Termek::find($id)->delete();
     }
-    
+
     public function store(Request $request){
         $termeks  = new Termek();
         $termeks ->modell = $request->modell;
@@ -60,16 +62,24 @@ class TermekController extends Controller
         ->whereBetween('t.ar', [$minAr, $maxAr])
         ->get();
         return $termek_ar_szerint;
+
+
     }
+
+
+
+
+
 
     public function adottTermekekMeretSzerint($id){
         $termek_meret_szerint = DB::table('termeks as t')
-        ->select('m.kep', 'm.nev', 't.ar')
+        ->select('m.kep', 'm.nev', 't.meret')
         ->join('modells as m', 't.modell', '=', 'm.modell_id' )
-        ->where('t.meret', 'LIKE', $id)
+        ->where('t.meret', $id)
         ->get();
         return $termek_meret_szerint;
     }
+
 
     public function egyezoTermekekSzama($meret, $termekNev){
         $egyezoTermekekSzama = DB::table('termeks as t')
@@ -88,6 +98,6 @@ class TermekController extends Controller
         return $termekModellId;
     }
 
-    
+
 
 }

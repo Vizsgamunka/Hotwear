@@ -1,43 +1,55 @@
 class PublicTermekView {
     #elem;
+
     constructor(elem, szuloElem) {
+
         let termekek = $('#meretek');
-        var termekMeretek = [];
+        let mennyiseg = $('#mennyiseg');
+        let keszlet = $('#termek-keszlet')
+
 
 
 
         elem.termekek.forEach(termek => {
-            termekMeretek.push(
-                termek.meret
-
-            );
-
-        });
-        termekMeretek = new Set(termekMeretek);
-        console.log(termekMeretek);
-        termekMeretek.forEach(meret => {
-            termekek.append(`
-                <option value='${meret}'>${meret}</option>
+            $('#meretek').append(`
+                <option value='${termek.termek_id}'>${termek.meret}</option>
             `);
-            
         });
-        let meretElem = $('#meret');
-        console.log(this.termekek);
+
+
+        keszletBeallit();
+
+        termekek.on("change", () => {
+            keszletBeallit();
+        });
+
+        function keszletBeallit() {
+            let darab = elem.termekek.find(t => t.termek_id == termekek.val()).keszlet;
+            keszlet.html(darab);
+            mennyiseg.attr('max', darab);
+            if (mennyiseg.val()>darab){
+                mennyiseg.val(darab);
+            }
+        }
+
+
         this.kosarbaTesz = $(`#gomb`);
         this.kosarbaTesz.on("click", () => {
             console.log("módosít az");
-            console.log(elem);
-/*             this.megvasaroltTermek.mennyiseg = mennyisegElem.val(); */
-            this.megvasaroltTermek.meret = meretElem.val();
-            this.kattintasTrigger('kosarbaTesz')
+            this.kattintasTrigger('kosarbaTesz', termekek.val(), mennyiseg.val())
         });
 
 
-        let termek = $('#termek');
+
     }
-    kattintasTrigger(esemenyneve) {
+    kattintasTrigger(esemenyneve, id, mennyiseg) {
         console.log("triggerben", esemenyneve);
-        const esemeny = new CustomEvent(esemenyneve, { detail: this.megvasaroltTermek });
+        const esemeny = new CustomEvent(esemenyneve, { detail:
+                {
+                    id: id,
+                    mennyiseg: mennyiseg
+                }
+        });
         window.dispatchEvent(esemeny);
     }
 

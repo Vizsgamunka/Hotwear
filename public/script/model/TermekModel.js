@@ -2,7 +2,7 @@ class TermekModel {
     #termekTomb = [];
 
     constructor() {
-       
+
     }
 
     adatBe(vegpont, myCallBack) {
@@ -20,6 +20,22 @@ class TermekModel {
             .catch((error) => {
                 console.error('Error:', error);
             });
+    }
+
+    kosarbaTesz(endpoint, data){
+        $.ajax({
+            type: "POST",
+            url: endpoint,
+            data: data,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: {
+                id:data.id,
+                mennyiseg:data.mennyiseg
+            },
+            dataType: 'json'
+        });
     }
 }
 

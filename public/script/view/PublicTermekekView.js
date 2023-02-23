@@ -14,17 +14,20 @@ class PublicTermekekView {
                             </div>
                         </div>
                     </div>
-                </a>          
+                </a>
             </div>
         `);
 
-        
+
 
         this.modellMegjelenit = $(`#termekId${elem.modell_id}`);
 
         this.modellMegjelenit.on("click", () => {
             this.kattintasTrigger('modellMegjelenit')
         });
+
+
+
 
     }
 

@@ -1,24 +1,28 @@
 import AdatModell from "../model/KosarModel.js";
 import KosarView from "../view/KosarView.js";
-import PublicTermekView from "../view/PublicTermekView.js";
+import TermekekController from "../controller/TermekekController.js";
+import PublicKosarView from "../view/PublicKosarview.js";
 
-class KosarController{
-    constructor(){
+
+class KosarController {
+    constructor() {
         const adatmodell = new AdatModell();
-        //adatmodell.adatBe('/api/modellek', this.megjelenitTermekek);
-        $(window).on('kosarbaTesz', (event)=>{
-            console.log(event.detail)
-         }) 
+        this.termekek = `/api/kosar`;
+        adatmodell.adatBe(this.termekek, this.megjelenitKosar);
+        $(window).on('kosarbaTesz', (event) => {
+            this.termekek = `/api/termekek`;
+            adatmodell.adatBe(this.termekek, this.megjelenitKosar);
+        })
     }
 
-    megjelenitTermekek(tomb){
-        let szuloElem=$(".kosar_article");
+    megjelenitKosar(tomb) {
+        let szuloElem = $(".kosar_article");
         szuloElem.empty()
         tomb.forEach(termek => {
-            new PublicTermekekView(termek, szuloElem);
+            new PublicKosarView(termek, szuloElem);
         });
     }
-    
+
 }
 
 export default KosarController;
