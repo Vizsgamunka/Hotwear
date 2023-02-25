@@ -35,7 +35,7 @@ Route::get('/termekek', function () {
 
 Route::get('/termekek/{modell}', [TermekController::class, 'show'])->name('termek');
 
-Route::get('/tervezok/{tervezo}', )->name('tervezo');
+Route::get('/tervezok/{tervezo}', [TervezoController::class, 'show'])->name('tervezo');
 
 Route::get('/rolunk', function () {
     return view('pages/rolunk');
