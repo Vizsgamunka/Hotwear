@@ -59,10 +59,18 @@
             @auth
             <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('rendelesek') }}">Rendelések</a></li>
             @endauth
-            @if(!Auth::user())
-            <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('login') }}">Bejelentkezés</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-medium" href="{{ route('register') }}">Regisztráció</a></li>
-            @endif
+            <li>
+                @if (Route::has('login'))
+                      @auth
+                      <a href="{{ route('profile_show') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Profil</a>
+                  @else
+                      <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Bejelentkezés</a>
+                  @if (Route::has('register'))
+                      <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Regisztráció</a>
+                  @endif
+                      @endauth
+                  @endif
+              </li>
 
           </ul>
           <form class="d-flex"><a class="text-1000" href="#!">

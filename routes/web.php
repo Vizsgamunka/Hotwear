@@ -77,14 +77,6 @@ Route::middleware(['admin',config('jetstream.auth_session'),'verified'])->group(
 });
 
 
-
-
-
-
-
-
-
-
 Route::get('/api/felhasznalok', [UserController::class, 'index']);
 
 Route::get('/api/kategoriak', [KategoriaController::class, 'index']);
